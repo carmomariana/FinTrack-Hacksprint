@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_editcategory"
+        android:layout_width="369dp"
+        android:layout_height="49dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_editcategory"
+        />
+
+    <TextView
+        android:id="@+id/tv_nameapp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="FinTrack"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.04" />
+
+    <TextView
+        android:id="@+id/tv_edititle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="40dp"
+        android:padding="8dp"
+        android:text="Title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nameapp" />
+
+    <EditText
+        android:id="@+id/et_editexpense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="4dp"
+        android:hint="Enter the Title"
+        android:textSize="22sp"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_edititle" />
+
+    <TextView
+        android:id="@+id/tv_editcategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:padding="8dp"
+        android:text="Category"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_editprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="356dp"
+        android:padding="8dp"
+        android:text="Price"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="80dp"
+        android:inputType="numberDecimal"
+        android:padding="8dp"
+        android:textSize="22sp"
+        android:minHeight="48dp"
+        android:hint="Enter the price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_editprice" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_delete"
+        style="@style/Widget.Material3.Button.IconButton.Outlined"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="16dp"
+        android:text="deletar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_guideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_guideline"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_uptade"
+        android:layout_width="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_height="wrap_content"
+        android:text="atualizar"
+        app:layout_constraintStart_toEndOf="@+id/vertical_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
