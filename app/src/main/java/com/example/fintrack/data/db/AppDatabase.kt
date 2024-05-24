@@ -10,11 +10,12 @@ import com.example.fintrack.data.db.entity.CategoryEntity
 import com.example.fintrack.data.db.entity.ExpenseEntity
 
 
-@Database(entities = [CategoryEntity::class, ExpenseEntity::class], version = 1)
+@Database(entities = [ExpenseEntity::class, CategoryEntity::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun CategoryDao(): CategoryDao
+
     abstract fun ExpenseDao(): ExpenseDao
+    abstract fun CategoryDao(): CategoryDao
 
     companion object {
         @Volatile
@@ -22,7 +23,7 @@ abstract class AppDatabase : RoomDatabase() {
 
         fun getDatabase(context: Context): AppDatabase {
             return INSTANCE ?: synchronized(this) {
-                Room.databaseBuilder(context, AppDatabase::class.java, "category_database, expense_database")
+                Room.databaseBuilder(context, AppDatabase::class.java, "expense_database, category_table")
                     .build()
                     .also { INSTANCE = it }
             }
