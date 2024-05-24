@@ -6,23 +6,25 @@ import com.example.fintrack.data.model.Expense
 
 class ExpenseRepository(private val expenseDao: ExpenseDao) {
 
-    suspend fun getAllCategory(): List<Expense> {
+    suspend fun getAllExpense(): List<Expense> {
         return expenseDao.getAllExpense()
     }
 
-    suspend fun insertCategory(expenseEntity: ExpenseEntity): Long {
+    suspend fun insertExpense(expenseEntity: ExpenseEntity): Long {
         return expenseDao.insertExpense(expenseEntity)
     }
 
-    suspend fun deleteCategory(id: Long) {
+    suspend fun deleteExpense(id: Long) {
         return expenseDao.deleteExpense(id)
     }
 
-    suspend fun updateCategory(expenseEntity: ExpenseEntity) {
+    suspend fun updateExpense(expenseEntity: ExpenseEntity) {
         expenseDao.updateExpense(
             id = expenseEntity.id,
-            nameExpense = expenseEntity.nameExpense,
+            imageColor = expenseEntity.imageColor,
             category = expenseEntity.category,
+            nameExpense = expenseEntity.nameExpense,
+            iconExpense = expenseEntity.iconExpense,
             price = expenseEntity.price,
             amount = expenseEntity.amount
         )

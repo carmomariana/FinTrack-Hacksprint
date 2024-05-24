@@ -58,6 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_margin="8dp"
+            tools:itemCount="1"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_category" />
