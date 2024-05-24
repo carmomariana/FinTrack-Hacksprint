@@ -6,7 +6,6 @@ import androidx.room.OnConflictStrategy.Companion.IGNORE
 import androidx.room.Query
 import com.example.fintrack.data.db.entity.ExpenseEntity
 import com.example.fintrack.data.model.Expense
-import com.example.fintrack.data.model.ExpenseCategory
 
 @Dao
 interface ExpenseDao {
@@ -21,13 +20,15 @@ interface ExpenseDao {
     suspend fun deleteExpense(id: Long)
 
     @Query(
-        "UPDATE EXPENSE_TABLE SET nameExpense = :nameExpense, category = :category," +
-                "price = :price, amount = :amount WHERE id = :id"
+        "UPDATE EXPENSE_TABLE SET nameExpense = :nameExpense, imageColor = :imageColor, category = :category," +
+                "iconExpense = :iconExpense,price = :price, amount = :amount WHERE id = :id"
     )
     suspend fun updateExpense(
         id: Long,
+        imageColor: Int,
         nameExpense: String,
-        category: ExpenseCategory,
+        category: String,
+        iconExpense: Int,
         price: Double,
         amount: Double,
     )

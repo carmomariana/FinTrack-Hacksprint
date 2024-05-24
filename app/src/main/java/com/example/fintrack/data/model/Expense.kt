@@ -1,10 +1,16 @@
 package com.example.fintrack.data.model
 
-data class Expense(
+import android.os.Parcelable
+import androidx.annotation.DrawableRes
+import kotlinx.parcelize.Parcelize
 
-    var id: String = "",
+@Parcelize
+data class Expense(
+    var id: Long = 0,
+    @DrawableRes var imageColor: Int,
+    var category: String,
     var nameExpense: String = "",
-    var category: ExpenseCategory,
+    @DrawableRes var iconExpense: Int,
     var price: Double,
-    var amount: Double,
-)
+    var amount: Double = 0.0,
+) : Parcelable
