@@ -8,73 +8,62 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/vg_heard"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/gradient_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:backgroundTint="@color/green"
-            android:layout_margin="8dp"
-            app:cardCornerRadius="20dp">
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="26dp"
+            android:src="@drawable/image_black"
+            android:layout_margin="24dp"/>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/tv_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:text="Total de Gastos:"
-                    android:textAlignment="center"
-                    android:textSize="30sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/value"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    tools:text="R$ 300,00"
-                    android:textSize="26sp"
-                    android:textStyle="bold"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_title"
-                    android:paddingBottom="8dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:textAlignment="center"
-                    />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_categories"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_margin="8dp"
-            tools:itemCount="1"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_category" />
+            android:text="Saldo em Conta"
+            style="@style/vg_heard" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_expense"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintTop_toTopOf="@id/tv_title"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:itemCount="7"
-            tools:listitem="@layout/item_expense"
-            android:layout_marginTop="8dp"/>
+        <TextView
+            android:id="@+id/value_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="48dp"
+            style="@style/vg_heard"
+            tools:text="R$ 1500,65" />
+
+
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_categories"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vg_heard"
+        app:layout_constraintTop_toBottomOf="@+id/vg_heard"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_category" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_expense"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_categories"
+        tools:itemCount="7"
+        tools:listitem="@layout/item_expense" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button_add"
@@ -83,7 +72,21 @@
         android:contentDescription="null"
         android:src="@drawable/baseline_add"
         android:layout_margin="16dp"
+        app:backgroundTint="@color/green_principal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/float_add_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:contentDescription="null"
+        android:focusable="true"
+        android:src="@drawable/baseline_add"
+        app:layout_constraintBottom_toBottomOf="@id/rv_categories"
+        app:layout_constraintEnd_toEndOf="@id/rv_categories"
+        app:layout_constraintTop_toTopOf="@id/rv_categories" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

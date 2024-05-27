@@ -20,20 +20,22 @@
         app:layout_constraintTop_toBottomOf="@+id/txtCategory"
          />
 
-    <TextView
-        android:id="@+id/txtDespesa"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/toolbar_create"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Create an Outcome"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/green_principal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FinTrack"
+            style="@style/TitleToolBar" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/txtTitle"
@@ -48,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDespesa" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_create" />
 
     <EditText
         android:id="@+id/edtDespesa"
@@ -118,7 +120,6 @@
         android:text="CREATE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
