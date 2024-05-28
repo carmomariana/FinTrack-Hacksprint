@@ -6,18 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_editcategory"
-        android:layout_width="369dp"
-        android:layout_height="49dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldeditCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="categorias"
         android:layout_margin="16dp"
-        android:layout_marginTop="16dp"
-        android:padding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_editcategory"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/tv_editprice"
+        app:layout_constraintTop_toBottomOf="@+id/tv_editcategory">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/tv_nameapp"

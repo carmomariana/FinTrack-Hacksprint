@@ -43,19 +43,14 @@ class MainActivity : AppCompatActivity() {
     private fun initRecyclerView() {
         expenseAdapter = AdapterExpense()
         expenseAdapter.setOnClickItem { expense ->
-//            val intent = Intent(this, ClasseEdit::class.java)
-//            intent.putExtra("name", expense.nameExpense)
-//            intent.putExtra("imageColor", expense.imageColor)
-//            intent.putExtra("category", expense.category)
-//            intent.putExtra("iconExpense", expense.iconExpense)
-//            intent.putExtra("price", expense.price)
+            val intent = Intent(this, EditCategoryActivity::class.java)
+            intent.putExtra("name", expense.nameExpense)
+            intent.putExtra("imageColor", expense.imageColor)
+            intent.putExtra("category", expense.category)
+            intent.putExtra("iconExpense", expense.iconExpense)
+            intent.putExtra("price", expense.price)
 
-            //Codigo para receber as informações na outra tela.
-            // val nameExpense = intent.getStringExtra("name")
-            //val imageColor = intent.getIntExtra("imageColor", R.color.white)
-            //val category = intent.getStringExtra("category")
-            //val iconExpense = intent.getIntExtra("iconExpense", R.drawable.ic_launcher_background)
-            //val price = intent.getIntExtra("price", 0)
+
 
             startActivity(intent)
         }
