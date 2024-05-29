@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("org.jetbrains.kotlin.kapt")
+    id("com.google.devtools.ksp")
     id ("kotlin-parcelize")
 }
 
@@ -54,10 +54,8 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     //Room
-    kapt(libs.room.compiler)
-    implementation(libs.room.runtime)
-    implementation(libs.room.paging)
-    implementation(libs.room.ktx)
+    implementation(libs.androidx.room.runtime)
+    annotationProcessor(libs.androidx.room.compiler)
 
     //Lifecycle
     implementation(libs.androidx.lifecycle.livedata.ktx)
